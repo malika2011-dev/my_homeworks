@@ -1,5 +1,4 @@
-class Inson(): # Super class
-    """ Inson haqidagi klass """
+class Inson(): 
 
     def __init__(self, ism, familiya, t_yil, manzil, passport):
         """  """
@@ -10,11 +9,9 @@ class Inson(): # Super class
         self.passport =passport
 
     def __str__(self):
-        """  """
         return f"{self.ism} {self.familiya}"
     
     def get_info(self):
-        """ Inson haqidagi ma'lumotlarni beruvchi funksiya """
         from datetime import date
         info = f"Ism: {self.ism} \nFamiliya: {self.familiya} \nYosh: {date.today().year-self.t_yil} \nTug'ilgan yil {self.t_yil}-yil  \
             \nManzil: {self.manzil}"
@@ -22,7 +19,7 @@ class Inson(): # Super class
         
     def get_age(self):
         from datetime import date
-        """ Insonning yoshini topuvchi funksiya """
+
         
         return date.today().year-self.t_yil
              
@@ -32,7 +29,7 @@ print(person1.get_info())
 print(person1.get_age())
 
 
-class Shifokor(Inson): # Voris klass
+class Shifokor(Inson): 
     """  """
 
     def __init__(self, ism, familiya, t_yil, manzil, passport, turi, daraja, ish_haqi):
@@ -42,7 +39,7 @@ class Shifokor(Inson): # Voris klass
         self.ish_haqi = ish_haqi
            
     def get_info(self):
-        """ Inson haqidagi ma'lumotlarni beruvchi funksiya """
+        
         from datetime import date
         info = f"Ism: {self.ism} \nFamiliya: {self.familiya} \nYosh: {date.today().year-self.t_yil} \nTug'ilgan yil {self.t_yil}-yil  \
             \nManzil: {self.manzil} \nKasbi: {self.turi} \nDarajasi: {self.daraja} \nIsh haqi: {self.ish_haqi} so'm"
@@ -68,7 +65,6 @@ print(malika.get_info())
 
 
 class Teacher(Inson):
-    """  """
 
     def __init__(self, ism, familiya, t_yil, manzil, passport, students:list, maosh:int, subject:str, sertificates:list, gender:str):
         super().__init__(ism, familiya, t_yil, manzil, passport)
@@ -92,7 +88,7 @@ class Teacher(Inson):
             
             elif new_student not in self.students:
                 self.students.append(new_student)
-                return f"{new_student} do'stlar ro'yhatiga qo'shildi !"
+                return f"{new_student} o'quvchilar ro'yhatiga qo'shildi !"
             
             else:
                 return f"{new_student} ro'yhatda bor. Iltimos uni boshqa nom bilan kiriting !"
@@ -109,7 +105,7 @@ class Teacher(Inson):
             
             elif student in self.students:
                 self.students.remove(student)
-                return f"{student} do'stlar ro'yhatidan o'chirildi !"
+                return f"{student} o'quvchilar ro'yhatidan o'chirildi !"
             
             else:
                 return f"{student} ro'yhatda yo'q !"
@@ -132,7 +128,7 @@ class Teacher(Inson):
             elif new_sertificate_name not in self.sertificates:
 
                 self.sertificates.append(new_sertificate_name)
-                return f"{new_sertificate_name} do'stlar ro'yhatiga qo'shildi !"
+                return f"{new_sertificate_name} serfikatlar ro'yhatiga qo'shildi !"
             
             else:
                 return f"{new_sertificate_name} ro'yhatda bor. Iltimos uni boshqa nom bilan kiriting !"
